@@ -1,0 +1,27 @@
+/* class applied around both the editor and the toolbar */
+.wrapper-class {
+  border: 1px solid red;
+}
+
+/* class applied around the editor */
+.editor-class {
+  border: 1px solid blue;
+}
+/*  class applied around the toolbar */
+/* !important has to be applied for some reason ¯\_(ツ)_/¯ */
+.toolbar-class {
+  background-color: #ecf0f1 !important;
+}
+
+.toolbar-inline-options {
+  /* background-color: rgba(255, 0, 0, 0.256) ; */
+  color: red !important;
+}
+
+/* options wrapper */
+.rdw-option-wrapper:hover {
+  box-shadow: 2px 2px 5px black !important;
+}
+.rdw-option-active {
+  box-shadow: inset 2px 2px 5px black !important;
+}
