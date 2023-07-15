@@ -18,10 +18,18 @@
   color: red !important;
 }
 
+.rdw-editor-toolbar>div {
+}
+.rdw-option-wrapper{
+  padding:10px !important
+}
 /* options wrapper */
 .rdw-option-wrapper:hover {
-  box-shadow: 2px 2px 5px black !important;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.53) !important;
 }
 .rdw-option-active {
-  box-shadow: inset 2px 2px 5px black !important;
+  box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.53) !important;
+}
+.rdw-option-active:hover {
+  box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.53) !important;
 }
