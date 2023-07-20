@@ -70,6 +70,10 @@ export default function useTextEditor() {
          //the callback fn is essential to upload images locally
          //otherwise only uploading using URLs is available.
          uploadCallback: uploadImageCallback,
+         defaultSize: {
+            height: '200px',
+            width: '150px',
+         },
       },
    };
 

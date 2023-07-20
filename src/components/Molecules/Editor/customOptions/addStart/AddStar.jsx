@@ -5,7 +5,7 @@ export default function AddStar(props) {
    const { appendToEditorContent } = useTextEditor();
 
    const addStar = () => {
-      appendToEditorContent(props, 'star');
+      appendToEditorContent(props, '⭐');
    };
 
    return (

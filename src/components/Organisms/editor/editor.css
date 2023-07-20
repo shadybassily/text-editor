@@ -36,11 +36,15 @@
   border-bottom: 1px solid rgba(128, 128, 128, 0.494);
   padding: 5px !important;
 }
-.rdw-image-wrapper{
+.rdw-image-wrapper {
   margin: 4px 0px;
 }
 @media (max-width: 1200px) {
   .editor-container {
     width: fit-content;
+  }
+  .rdw-image-modal {
+    left: -400% !important;
+    top: 100% !important;
   }
 }
