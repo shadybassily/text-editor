@@ -44,7 +44,7 @@ export default function TextEditor() {
    };
 
    return (
-      <div>
+      <div className='editor-container'>
          <Editor
             editorState={editorState}
             toolbar={toolbarOptions}
