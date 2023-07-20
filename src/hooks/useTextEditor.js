@@ -72,7 +72,7 @@ export default function useTextEditor() {
          uploadCallback: uploadImageCallback,
       },
    };
-   
+
    //inserting content to the text editor
    const appendToEditorContent = (props, content = '') => {
       const { editorState, onChange } = props;
@@ -85,5 +85,5 @@ export default function useTextEditor() {
       onChange(EditorState.push(editorState, contentState, 'insert-characters'));
    };
 
-   return { editorState, setEditorState, toolbarOptions, appendToEditorContent, replaceEditorContent };
+   return { editorState, setEditorState, toolbarOptions, appendToEditorContent };
 }
