@@ -3,6 +3,7 @@ import useTextEditor from '../../../hooks/useTextEditor';
 // styling
 import './editor.css';
 import '../../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import AddStar from '../../Molecules/Editor/customOptions/addStart/AddStar';
 
 export default function TextEditor() {
    const { editorState, setEditorState, toolbarOptions } = useTextEditor();
@@ -15,6 +16,7 @@ export default function TextEditor() {
             editorClassName="editor-class"
             toolbarClassName="toolbar-class"
             onEditorStateChange={setEditorState}
+            toolbarCustomButtons={[<AddStar />]}
          />
       </div>
    );

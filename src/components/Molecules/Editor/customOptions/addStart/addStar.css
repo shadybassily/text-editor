@@ -1,0 +1,8 @@
+.star {
+  height: fit-content;
+  padding: 7px;
+  position: relative;
+  background-color: white;
+  margin: 6px;
+  font-size: 22px;
+}

@@ -1,13 +1,14 @@
-import { EditorState, Modifier } from 'draft-js';
+import { EditorState, Modifier, ContentState } from 'draft-js';
 import { useState, useEffect } from 'react';
 //icons
 import bold from '../assets/editor-icons/bold.png';
-import CustomColorPicker from '../components/Molecules/Editor/CustomColorPicker/CustomColorPicker';
+import CustomColorPicker from '../components/Molecules/Editor/customColorPicker/CustomColorPicker';
 
 export default function useTextEditor() {
    const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
 
    const [uploadedImage, setUploadedImage] = useState([]);
+
    const uploadImageCallback = (file) => {
       // long story short, every time we upload an image, we
       // need to save it to the state so we can get its data
@@ -29,6 +30,7 @@ export default function useTextEditor() {
          resolve({ data: { link: imageObject.localSrc } });
       });
    };
+
    const toolbarOptions = {
       options: ['inline', 'list', 'colorPicker', 'image', 'fontFamily', 'history'],
       inline: {
@@ -70,6 +72,18 @@ export default function useTextEditor() {
          uploadCallback: uploadImageCallback,
       },
    };
+   
+   //inserting content to the text editor
+   const appendToEditorContent = (props, content = '') => {
+      const { editorState, onChange } = props;
+      const contentState = Modifier.replaceText(
+         editorState.getCurrentContent(),
+         editorState.getSelection(),
+         content,
+         editorState.getCurrentInlineStyle()
+      );
+      onChange(EditorState.push(editorState, contentState, 'insert-characters'));
+   };
 
-   return { editorState, setEditorState, toolbarOptions };
+   return { editorState, setEditorState, toolbarOptions, appendToEditorContent, replaceEditorContent };
 }

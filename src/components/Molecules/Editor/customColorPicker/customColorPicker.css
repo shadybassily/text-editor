@@ -6,8 +6,8 @@
 }
 .color-picker-container {
   height: fit-content;
-  padding: 9px;
+  padding: 10px;
   position: relative;
   background-color: white;
-  margin: 2px;
+  margin: 6px;
 }
