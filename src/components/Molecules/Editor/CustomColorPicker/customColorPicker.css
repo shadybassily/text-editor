@@ -1,0 +1,13 @@
+.block-picker {
+  position: absolute !important;
+  z-index: 1;
+  left: -200%;
+  top: 100%;
+}
+.color-picker-container {
+  height: fit-content;
+  padding: 9px;
+  position: relative;
+  background-color: white;
+  margin: 2px;
+}

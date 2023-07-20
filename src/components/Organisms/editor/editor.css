@@ -1,16 +1,11 @@
-.editor-container{
+.editor-container {
   padding: 5px;
-  width: fit-content
-
-}
-/* class applied around both the editor and the toolbar */
-.wrapper-class {
+  width: fit-content;
 }
 
 /* class applied around the editor */
 .editor-class {
   min-height: 50vh;
-  background-color: #74baff7e;
   border-top: 2px solid rgba(0, 0, 0, 0.328);
   padding: 5px;
   line-height: 5px;
@@ -19,7 +14,6 @@
 /* !important has to be applied for some reason ¯\_(ツ)_/¯ */
 .toolbar-class {
   background-color: #ecf0f1 !important;
-
 }
 
 .rdw-option-wrapper {
