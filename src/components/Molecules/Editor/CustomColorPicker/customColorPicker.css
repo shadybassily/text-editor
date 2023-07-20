@@ -1,6 +1,6 @@
 .block-picker {
   position: absolute !important;
-  z-index: 1;
+  z-index: 3;
   left: -200%;
   top: 100%;
 }

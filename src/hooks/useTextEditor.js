@@ -1,10 +1,34 @@
 import { EditorState, Modifier } from 'draft-js';
 import { useState, useEffect } from 'react';
+//icons
 import bold from '../assets/editor-icons/bold.png';
 import CustomColorPicker from '../components/Molecules/Editor/CustomColorPicker/CustomColorPicker';
+
 export default function useTextEditor() {
    const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
 
+   const [uploadedImage, setUploadedImage] = useState([]);
+   const uploadImageCallback = (file) => {
+      // long story short, every time we upload an image, we
+      // need to save it to the state so we can get its data
+      // later when we decide what to do with it.
+      let LocallyUploadedImages = uploadedImage;
+      const imageObject = {
+         file: file,
+         localSrc: URL.createObjectURL(file),
+      };
+
+      LocallyUploadedImages.push(imageObject);
+      setUploadedImage(LocallyUploadedImages);
+      // setUploadedImages(LocallyUploadedImages);
+      // We need to return a promise with the image src
+      // the img src we will use here will be what's needed
+      // to preview it in the browser. This will be different than what
+      // we will see in the index.md file we generate.
+      return new Promise((resolve, reject) => {
+         resolve({ data: { link: imageObject.localSrc } });
+      });
+   };
    const toolbarOptions = {
       options: ['inline', 'list', 'colorPicker', 'image', 'fontFamily', 'history'],
       inline: {
@@ -38,6 +62,12 @@ export default function useTextEditor() {
       },
       colorPicker: {
          component: CustomColorPicker,
+      },
+      image: {
+         className: 'rdw-image-wrapper',
+         //the callback fn is essential to upload images locally
+         //otherwise only uploading using URLs is available.
+         uploadCallback: uploadImageCallback,
       },
    };
 
