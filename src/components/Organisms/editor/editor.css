@@ -1,11 +1,13 @@
 /* class applied around both the editor and the toolbar */
 .wrapper-class {
-  border: 1px solid red;
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid green
 }
 
 /* class applied around the editor */
 .editor-class {
-  border: 1px solid blue;
+  min-height: 50vh;
 }
 /*  class applied around the toolbar */
 /* !important has to be applied for some reason ¯\_(ツ)_/¯ */
@@ -13,15 +15,11 @@
   background-color: #ecf0f1 !important;
 }
 
-.toolbar-inline-options {
-  /* background-color: rgba(255, 0, 0, 0.256) ; */
-  color: red !important;
+.rdw-option-wrapper {
+  padding: 10px !important;
 }
-
-.rdw-editor-toolbar>div {
-}
-.rdw-option-wrapper{
-  padding:10px !important
+.rdw-dropdown-wrapper{
+  padding: 5px !important;
 }
 /* options wrapper */
 .rdw-option-wrapper:hover {
@@ -32,4 +30,14 @@
 }
 .rdw-option-active:hover {
   box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.53) !important;
+}
+.rdw-dropdownoption-default {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.494);
+  padding: 5px !important;
+}
+
+@media (max-width: 1200px) {
+  .wrapper-class {
+    width: 100%;
+  }
 }

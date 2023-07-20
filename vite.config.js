@@ -7,4 +7,7 @@ export default defineConfig({
     global: 'window',
   },
   plugins: [react()],
+  server: {
+    host: true
+  }
 })
