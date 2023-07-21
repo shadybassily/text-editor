@@ -1,13 +1,11 @@
-import { EditorState, Modifier, ContentState, convertToRaw } from 'draft-js';
-import { useState, useEffect } from 'react';
+import { EditorState, Modifier, convertToRaw } from 'draft-js';
+import { useState } from 'react';
 import draftToHtml from 'draftjs-to-html';
-
 //icons
-import bold from '../assets/editor-icons/icons8-bold.png';
-import italic from '../assets/editor-icons/icons8-italic.png';
-import underline from '../assets/editor-icons/icons8-underline.png';
-
-import CustomColorPicker from '../components/Molecules/Editor/customColorPicker/CustomColorPicker';
+import bold from '@/assets/editor-icons/icons8-bold.png';
+import italic from '@/assets/editor-icons/icons8-italic.png';
+import underline from '@/assets/editor-icons/icons8-underline.png';
+import CustomColorPicker from '@/components/Molecules/Editor/custom-color-picker/CustomColorPicker';
 
 export default function useTextEditor() {
    const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
