@@ -1,5 +1,5 @@
 import useTextEditor from '../../../../../hooks/useTextEditor';
-import './addStar.css';
+import './add-start.css';
 
 export default function AddStar(props) {
    const { appendToEditorContent } = useTextEditor();

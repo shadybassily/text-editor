@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react';
 import draftToHtml from 'draftjs-to-html';
 
 //icons
-import bold from '../assets/editor-icons/bold.png';
+import bold from '../assets/editor-icons/icons8-bold.png';
+import italic from '../assets/editor-icons/icons8-italic.png';
+import underline from '../assets/editor-icons/icons8-underline.png';
+
 import CustomColorPicker from '../components/Molecules/Editor/customColorPicker/CustomColorPicker';
 
 export default function useTextEditor() {
@@ -48,6 +51,8 @@ export default function useTextEditor() {
          dropdownClassName: undefined,
          options: ['bold', 'italic', 'underline'],
          bold: { icon: bold },
+         italic: { icon: italic },
+         underline: { icon: underline },
       },
       list: {
          inDropdown: false,

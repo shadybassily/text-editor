@@ -1,5 +1,5 @@
 import { BlockPicker } from 'react-color';
-import './customColorPicker.css';
+import './custom-color-picker.css';
 export default function CustomColorPicker(props) {
    const { expanded, onExpandEvent } = props;
    const { color = '#000000' } = props.currentState;
