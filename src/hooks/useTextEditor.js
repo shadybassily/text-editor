@@ -1,5 +1,7 @@
-import { EditorState, Modifier, ContentState } from 'draft-js';
+import { EditorState, Modifier, ContentState, convertToRaw } from 'draft-js';
 import { useState, useEffect } from 'react';
+import draftToHtml from 'draftjs-to-html';
+
 //icons
 import bold from '../assets/editor-icons/bold.png';
 import CustomColorPicker from '../components/Molecules/Editor/customColorPicker/CustomColorPicker';
@@ -8,6 +10,13 @@ export default function useTextEditor() {
    const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
 
    const [uploadedImage, setUploadedImage] = useState([]);
+
+   //convert text editor content to HTML to save it
+   const convertToHTML = () => {
+      const rawContentState = convertToRaw(editorState.getCurrentContent());
+      const html = draftToHtml(rawContentState);
+      return html;
+   };
 
    const uploadImageCallback = (file) => {
       // long story short, every time we upload an image, we
@@ -89,5 +98,5 @@ export default function useTextEditor() {
       onChange(EditorState.push(editorState, contentState, 'insert-characters'));
    };
 
-   return { editorState, setEditorState, toolbarOptions, appendToEditorContent };
+   return { editorState, setEditorState, toolbarOptions, appendToEditorContent, convertToHTML };
 }
