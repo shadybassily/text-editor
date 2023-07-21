@@ -1,7 +1,8 @@
 .text-review {
-    padding: 7px;
+  padding: 7px;
+  border-left: 2px solid rgba(128, 128, 128, 0.494);
 }
 
 .text-review p {
-    color: red;
+  color: red;
 }

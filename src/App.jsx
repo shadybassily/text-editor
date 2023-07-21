@@ -5,17 +5,19 @@ import './App.css';
 import CopyRights from './components/Organisms/copy-rights/CopyRights';
 function App() {
    const { editorState, setEditorState, toolbarOptions, convertToHTML } = useTextEditor();
-
+   console.log(editorState)
    return (
-      <div>
+      <>
          <CopyRights />
-         <Editor
-            editorState={editorState}
-            setEditorState={setEditorState}
-            toolbarOptions={toolbarOptions}
-         />
-         <TextReview html={convertToHTML()} />
-      </div>
+         <div className='App'>
+            <Editor
+               editorState={editorState}
+               setEditorState={setEditorState}
+               toolbarOptions={toolbarOptions}
+            />
+            <TextReview html={convertToHTML()} />  
+         </div>
+      </>
    );
 }
 
