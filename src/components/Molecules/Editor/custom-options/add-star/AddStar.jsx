@@ -1,4 +1,4 @@
-import useTextEditor from '../../../../../hooks/useTextEditor';
+import useTextEditor from '@/utils/hooks/useTextEditor';
 import './add-star.css';
 
 export default function AddStar(props) {

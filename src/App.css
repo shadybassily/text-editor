@@ -6,4 +6,5 @@ body {
 .App {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 }

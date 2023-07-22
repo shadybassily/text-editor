@@ -1,13 +1,14 @@
 .editor-container {
   padding: 5px;
   width: fit-content;
+  position: relative;
 }
 
 /* class applied around the editor */
 .editor-class {
   min-height: 50vh;
   border-top: 2px solid rgba(0, 0, 0, 0.328);
-  padding: 5px;
+  padding:25px 5px;
   line-height: 5px;
 }
 /*  class applied around the toolbar */
