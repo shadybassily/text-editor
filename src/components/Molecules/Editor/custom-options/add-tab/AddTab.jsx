@@ -1,10 +1,11 @@
 import { useState, useContext } from 'react';
-import { TabContext, TabDispatchContext } from '@/App';
 import { createPortal } from 'react-dom';
-
-import './addTab.css';
 import { nanoid } from 'nanoid';
-import Modal from '../modal/Modal';
+
+import { TabDispatchContext } from '@/App';
+import Modal from '@/components/Atoms/modal/Modal';
+import addIcon from '@/assets/editor-icons/icons8-create.png';
+
 export default function AddTab() {
    const dispatch = useContext(TabDispatchContext);
 
@@ -51,7 +52,6 @@ export default function AddTab() {
                   title="Enter Tab Name"
                   content={
                      <input
-                        className="new-tab-input"
                         placeholder="Tab Name"
                         value={tabName}
                         onChange={handleInputChange}
@@ -63,22 +63,7 @@ export default function AddTab() {
                />,
                document.body
             )}
-         <button onClick={handleAdd} className="add-tab-btn">
-            +
-         </button>
+         <img src={addIcon} onClick={handleAdd} className="custom-option" />
       </>
    );
-}
-
-{
-   /* <div className="add-tab-actions">
-               <input
-                  className="new-tab-input"
-                  placeholder="Tab Name"
-                  value={tabName}
-                  onChange={handleInputChange}
-               />
-               <button onClick={handleSave}>save</button>
-               <button onClick={handleCancel}>Cancel</button>
-            </div> */
 }

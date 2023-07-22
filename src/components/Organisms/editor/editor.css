@@ -8,7 +8,7 @@
 .editor-class {
   min-height: 50vh;
   border-top: 2px solid rgba(0, 0, 0, 0.328);
-  padding:25px 5px;
+  padding: 35px 5px;
   line-height: 5px;
 }
 /*  class applied around the toolbar */
@@ -39,6 +39,19 @@
 }
 .rdw-image-wrapper {
   margin: 4px 0px;
+}
+/** TEST */
+.custom-option {
+  height: fit-content;
+  padding: 7px;
+  position: relative;
+  background-color: white;
+  margin: 6px;
+  font-size: 22px;
+  border: none;
+}
+.custom-option:hover {
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.53) !important;
 }
 @media (max-width: 1200px) {
   .editor-container {

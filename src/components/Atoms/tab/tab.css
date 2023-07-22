@@ -1,7 +1,15 @@
 .tab {
-  padding: 2px 15px;
-  border: 1px solid rgba(128, 128, 128, 0.408);
+  padding: 5px 15px;
+  border-top: transparent;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-family: sans-serif;
+  background-color: white;
+  border-right: 1px solid gray;
 }
 
 .show-tab {
@@ -10,10 +18,35 @@
 }
 .active {
   background-color: #b2bec3;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-box-shadow: 2px 2px 5px gray;
+  box-shadow: 2px 2px 5px gray;
+  border-right: 1px solid #b2bec3;
+  color: white;
   height: 25px;
+}
+.tab-container {
+  position: relative;
+}
+
+.delete-tab-btn {
+  position: absolute;
+  left: 25%;
+  visibility: hidden;
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.show-delete-btn {
+  transform: translateY(25px);
+  transition: 0.3s;
+  visibility: visible;
+}
+
+.hide-delete-btn {
+  transform: translateY(5px);
+  transition: 0.3s;
 }
 
 @keyframes showTab {

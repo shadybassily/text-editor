@@ -2,9 +2,14 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f5f6fa;
 }
 .App {
   display: flex;
   flex-wrap: wrap;
   position: relative;
+}
+input {
+  padding: 5px;
+  outline: none;
 }

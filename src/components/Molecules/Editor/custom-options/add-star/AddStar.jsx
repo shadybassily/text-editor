@@ -1,5 +1,4 @@
 import useTextEditor from '@/utils/hooks/useTextEditor';
-import './add-star.css';
 
 export default function AddStar(props) {
    const { appendToEditorContent } = useTextEditor();
@@ -9,7 +8,7 @@ export default function AddStar(props) {
    };
 
    return (
-      <div onClick={addStar} className="star">
+      <div onClick={addStar} className="custom-option">
          ⭐
       </div>
    );
