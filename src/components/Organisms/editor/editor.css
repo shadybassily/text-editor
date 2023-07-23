@@ -7,14 +7,17 @@
 /* class applied around the editor */
 .editor-class {
   min-height: 50vh;
-  border-top: 2px solid rgba(0, 0, 0, 0.328);
-  padding: 35px 5px;
+  padding: 5px;
   line-height: 5px;
+  background-color: white;
+  margin-top: 45px;
 }
 /*  class applied around the toolbar */
 /* !important has to be applied for some reason ¯\_(ツ)_/¯ */
 .toolbar-class {
   background-color: #ecf0f1 !important;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.328) !important;
+
 }
 
 .rdw-option-wrapper {

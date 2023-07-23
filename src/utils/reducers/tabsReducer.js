@@ -1,7 +1,6 @@
 export default function tabsReducer(state, action) {
    switch (action.type) {
       case 'select': {
-         //select a tab
          return {
             selectedTab: action.payload,
             tabs: state.tabs,
