@@ -1,6 +1,8 @@
-import { EditorState, Modifier, convertToRaw } from 'draft-js';
+import { EditorState, Modifier, convertToRaw, ContentState } from 'draft-js';
 import { useState } from 'react';
 import draftToHtml from 'draftjs-to-html';
+import htmlToDraft from 'html-to-draftjs';
+
 //icons
 import bold from '@/assets/editor-icons/icons8-bold.png';
 import italic from '@/assets/editor-icons/icons8-italic.png';
@@ -17,6 +19,12 @@ export default function useTextEditor() {
       const rawContentState = convertToRaw(editorState.getCurrentContent());
       const html = draftToHtml(rawContentState);
       return html;
+   };
+
+   const displayInEditor = (content = '') => {
+      let { contentBlocks, entityMap } = htmlToDraft(content);
+      let contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
+      setEditorState(EditorState.createWithContent(contentState));
    };
 
    const uploadImageCallback = (file) => {
@@ -101,5 +109,12 @@ export default function useTextEditor() {
       onChange(EditorState.push(editorState, contentState, 'insert-characters'));
    };
 
-   return { editorState, setEditorState, toolbarOptions, appendToEditorContent, convertToHTML };
+   return {
+      editorState,
+      setEditorState,
+      toolbarOptions,
+      appendToEditorContent,
+      convertToHTML,
+      displayInEditor,
+   };
 }

@@ -1,23 +1,15 @@
-import { useContext, useState } from 'react';
-import { TabContext, TabDispatchContext } from '@/App';
+import { useContext } from 'react';
+import { TabContext } from '@/App';
 import './tab.css';
 
-export default function Tab({ tab }) {
+export default function Tab({ tab, handleTabSelect }) {
    const { selectedTab } = useContext(TabContext);
-   const dispatch = useContext(TabDispatchContext);
 
    const isSelected = selectedTab?.id === tab.id;
    const tabClassName = `tab show-tab ${isSelected && 'active'}`;
 
-   const handleTabSelect = () => {
-      dispatch({
-         type: 'select',
-         payload: tab,
-      });
-   };
-
    return (
-      <div className={tabClassName} onClick={handleTabSelect}>
+      <div className={tabClassName} onClick={() => handleTabSelect(tab)}>
          {tab.name}
       </div>
    );

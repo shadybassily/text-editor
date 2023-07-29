@@ -2,15 +2,17 @@
   padding: 5px;
   width: fit-content;
   position: relative;
+  border: 1px solid red;
+  width: 100%;
 }
 
 /* class applied around the editor */
 .editor-class {
   min-height: 50vh;
   padding: 5px;
-  line-height: 5px;
   background-color: white;
   margin-top: 45px;
+
 }
 /*  class applied around the toolbar */
 /* !important has to be applied for some reason ¯\_(ツ)_/¯ */

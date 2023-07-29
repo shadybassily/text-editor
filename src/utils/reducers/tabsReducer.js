@@ -31,5 +31,16 @@ export default function tabsReducer(state, action) {
             tabs,
          };
       }
+      case 'update': {
+         if (state.tabs.length === 0) return state;
+         let newTabs = state.tabs.map((tab) => {
+            if (tab.id !== action.payload.id) return tab;
+            return action.payload;
+         });
+         return {
+            selectedTab: action.payload,
+            tabs: newTabs,
+         };
+      }
    }
 }
