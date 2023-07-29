@@ -7,6 +7,7 @@ export default defineConfig({
    define: {
       global: 'window',
    },
+   base: '/text-editor',
    plugins: [react()],
    server: {
       host: true,
